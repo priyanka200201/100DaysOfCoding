@@ -1,4 +1,18 @@
 Question: https://practice.geeksforgeeks.org/problems/fitting-the-array1514/1
+
+INPUT/OUTPUT:
+Input: arr[] = {7, 5, 3, 2},
+       brr[] = {5, 4, 8, 7} and n = 4
+Output: YES
+
+Input: arr[] = {1, 2, 4},
+       brr[] = {1, 2, 3} and n = 3 
+Output: NO
+Explanation: 
+As 1<=1, 2<=2 but 4>3 so, 
+arr[] array will not fit in brr[] array.
+
+
 Solution:
 class Solution{
     // Function for finding maximum and value pair
