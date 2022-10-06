@@ -15,7 +15,6 @@ Constraints:
 1 <= N <= 105
 0 <= Arri <= 106
 
-Example 1:
 
 Test Case 1:
 
