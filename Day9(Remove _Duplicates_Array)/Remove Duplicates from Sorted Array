@@ -1,0 +1,17 @@
+//Remove Duplicates from Sorted Array
+//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i=1;
+        for(int j=1; j< nums.length; j++){
+            if(nums[j] == nums[j-1])     //checks whether both elements are  same i.e duplicate elements
+                
+                continue;                 //skips the index of one of the  duplicate element
+            
+            nums[i]=nums[j];              
+            i++;
+        }    
+        return(i);    
+    }
+}
