@@ -1,0 +1,32 @@
+//https://practice.geeksforgeeks.org/problems/maximum-index-1587115620/1?page=3&category[]=Arrays&sortBy=submissions
+
+class Solution{
+    
+    // A[]: input array
+    // N: size of array
+    // Function to find the maximum index difference.
+    static int maxIndexDiff(int A[], int N) { 
+        int i,j;
+        int max=-1;
+        for(i=0;i<N;i++)
+        {
+            j=N-1;
+            int c=0;
+                while(i<=j)
+                {
+                    //compare the elements
+                    if(A[i]<=A[j]){
+                        //c will store index
+                        c=j-i;
+                        break;
+                    }
+                   j--; 
+                }
+                /*this will store the max index comparing 
+                the last index and new found index*/
+                max=Math.max(max,c);
+            }
+        return max;
+        
+    }
+}
