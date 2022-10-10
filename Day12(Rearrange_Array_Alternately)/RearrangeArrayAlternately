@@ -1,0 +1,28 @@
+//Rearrange Array Alternately
+//https://practice.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1
+
+class Solution{
+    
+    //Function to rearrange  the array elements alternately.
+    public static void rearrange(long arr[], int n){        // n: size of array
+       long[] temp = new long[n];                           // temp: input array
+        int j=0,c=1,i;
+        for(i=0;i<n;i++)
+        {
+           if(i%2==0)              //for even index
+            {
+                temp[i] = arr[n-c];            //rearanges the max values in even position
+                c++;
+            }
+            else                   //for odd index
+            {
+                temp[i] = arr[j];            //rearanges the min values in odd position
+                j++;
+            }
+        }
+       for(i=0;i<n;i++)
+        {
+            arr[i] = temp[i];
+        }
+    }    
+}
