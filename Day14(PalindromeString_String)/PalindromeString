@@ -1,0 +1,18 @@
+//Palindrome String
+//https://practice.geeksforgeeks.org/problems/palindrome-string0817/1?page=1&category[]=Strings&sortBy=submissions
+
+class Solution {
+    int isPalindrome(String S) {
+      int i;
+      char n;
+      String rev="";
+     for (i = S.length()-1; i >=0; i--) {
+         n=S.charAt(i);           //extracting each character from the end
+         rev=rev+n;               //storing reverse
+        }
+         if(S.equals(rev))         //check whether the original string and reversed string is equal
+         return 1;
+        else
+        return 0;
+    }
+}
