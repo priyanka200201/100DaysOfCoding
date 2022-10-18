@@ -1,0 +1,19 @@
+Question:
+Write a program that takes a set of names of individuals and abbreviates 
+the first, middle and other names except the lastname by their first letter.
+
+Explanation :
+Given a full name in the form of a string, the task is to print the initials of a name, in short, and surname in full. 
+
+Test Case 1:
+
+Input: Devashish Kumar Gupta
+Output: D. K. Gupta
+
+Test Case 2:
+Input: Ishita Bhuiya
+Output: I. Bhuiya
+
+Test Case 3:
+Input:''
+Output: No output as string is empty
