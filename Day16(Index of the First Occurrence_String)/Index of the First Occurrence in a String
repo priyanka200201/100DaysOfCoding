@@ -1,0 +1,24 @@
+//Question: Find the Index of the First Occurrence in a String.
+//https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+         
+        if(haystack.length() < needle.length())  //checking whether string is of length more than that of string to search occurence of
+		{
+		return -1;
+		}
+        for(int i = 0; i <= haystack.length()-needle.length(); i++) {
+          int j;
+          for(j = 0; j < needle.length(); j++) {
+            if(haystack.charAt(i+j) != needle.charAt(j)) {                    //checking the occurence
+              break;
+            }
+          }                   
+          if(j == needle.length()) {                                          //if j is equal to the length of string to search occurence of, occurence id found 
+            return i;
+          }
+        }
+      return -1;
+    }
+}
