@@ -1,0 +1,23 @@
+QUESTION: Longest Common Substring
+//https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1
+
+
+class Solution{
+  
+    int longestCommonSubstr(String s1, String s2, int n, int m){
+       int ans=0;
+        int arr[][]=new int[n+1][m+1];
+        for(int i=n-1;i>=0;i--)
+        {
+            for(int j=m-1;j>=0;j--)
+            {
+                if(s1.charAt(i)==s2.charAt(j))
+                {
+                    arr[i][j]=1+arr[i+1][j+1];
+                    ans=Math.max(ans,arr[i][j]);
+                }
+            }
+        }
+        return ans;
+    }
+}
