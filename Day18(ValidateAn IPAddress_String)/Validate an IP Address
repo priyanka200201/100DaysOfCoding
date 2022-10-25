@@ -1,0 +1,33 @@
+QUESTION: Validate an IP Address
+//https://practice.geeksforgeeks.org/problems/validate-an-ip-address-1587115621/1?page=1&category[]=Strings&sortBy=submissions
+
+
+lass Solution {
+
+    public boolean isValid(String s) {
+        
+    if(s.charAt(0) == '.' || s.charAt(s.length()-1) ==  '.')return false;
+    String[] str = s.split("\\.");
+    if(str.length != 4)return false;        
+
+    for(String a: str){
+        if(a.matches("[a-zA-Z]"))            //match strings that contain a non-letter
+        return false;
+        
+        if(a.length() == 0 || a.length() >4)     //checks the length of x1,x2,x3,x4 is zero or greater than 4 or not
+        return false;
+        
+        if(a.equals("000") || a.equals("00") || a.equals("0000"))     //checks zeores in the address
+        return false;
+        
+        if(a.length()>1 && a.charAt(0)== '0')       
+        return false;
+        
+        int temp = Integer.parseInt(a);    //converts string to integer to check the range of x1,x2,x3,x4
+        if(temp<0 || temp> 255)
+        return false;
+    }
+    return true;
+              }
+
+          }
