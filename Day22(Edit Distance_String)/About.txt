@@ -1,0 +1,36 @@
+QUESTION:  Edit Distance
+//https://practice.geeksforgeeks.org/problems/edit-distance3702/1?page=1&category[]=Strings&sortBy=submissions
+
+Given two strings s and t. Return the minimum number of operations required to convert s to t.
+The possible operations are permitted:
+
+Insert a character at any position of the string.
+Remove any character from the string.
+Replace any character from the string with any other character.
+ 
+
+Test Case 1:
+
+Input: 
+s = "geek", t = "gesek"
+Output: 1
+Explanation: One operation is required 
+inserting 's' between two 'e's of str1.
+
+Test Case 2:
+
+Input : 
+s = "gfg", t = "gfg"
+Output: 
+0
+Explanation: Both strings are same.
+ 
+
+
+Expected Time Complexity: O(|s|*|t|)
+Expected Space Complexity: O(|s|*|t|)
+
+
+Constraints:
+1 ≤ Length of both strings ≤ 100
+Both the strings are in lowercase.
