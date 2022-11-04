@@ -1,0 +1,31 @@
+QUESTION: Shortest Common Supersequence
+//https://practice.geeksforgeeks.org/problems/shortest-common-supersequence0322/1
+
+class Solution
+{
+    public static int shortestCommonSupersequence(String X,String Y,int m,int n)
+    {
+         {
+         int [][]  arr = new int [m+1][n+1];
+       //int max = 0;
+       for(int i = 0 ; i <= m ; i++){
+           for(int j = 0 ; j <= n ;j++){
+               if(i == 0|| j== 0){
+                   arr[i][j]= 0;
+               }
+               else{
+                   if(X.charAt(i-1) == Y.charAt(j-1) ){   //checking for repeated character
+                        arr[i][j] = arr[i-1][j-1]+1;
+                   }
+                    else{
+                        arr[i][j] = Math.max(arr[i-1][j] , arr[i][j-1]);
+                    }
+               }
+               
+           }
+       }
+       
+       return m+n - arr[m][n];
+}
+}
+}
