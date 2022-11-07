@@ -1,0 +1,28 @@
+QUESTION: Longest Prefix Suffix
+//https:https://practice.geeksforgeeks.org/problems/longest-prefix-suffix2527/1?page=2&category[]=Strings&sortBy=submissions
+
+Given a string of characters, find the length of the longest proper prefix which is also a proper suffix.
+
+NOTE: Prefix and suffix can be overlapping but they should not be equal to the entire string.
+
+Test Case 1:
+
+Input: s = "abab"
+Output: 2
+Explanation: "ab" is the longest proper 
+prefix and suffix. 
+
+
+Test Case 2:
+
+Input: s = "aaaa"
+Output: 3
+Explanation: "aaa" is the longest proper 
+prefix and suffix. 
+
+Expected Time Complexity: O(|s|)
+Expected Auxiliary Space: O(|s|)
+
+Constraints:
+1 ≤ |s| ≤ 105
+s contains lower case English alphabets

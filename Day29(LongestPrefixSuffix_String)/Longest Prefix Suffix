@@ -1,0 +1,24 @@
+QUESTION: Longest Prefix Suffix
+//https:https://practice.geeksforgeeks.org/problems/longest-prefix-suffix2527/1?page=2&category[]=Strings&sortBy=submissions
+
+
+class Solution {
+    int lps(String s) {
+        int i=1,len=0;
+        int lps[]=new int[s.length()];
+        while(i<s.length())
+        {
+            if(s.charAt(i)==s.charAt(len)) //checking first and last character
+            {
+                len++;
+                lps[i++]=len;               //implementing to 2nd character
+             }
+             else{
+                if(len>0)  
+                len=lps[len-1];
+                else lps[i++]=0;
+            }
+        }
+        return lps[s.length()-1];
+    }
+}
