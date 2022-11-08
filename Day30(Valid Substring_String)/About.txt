@@ -1,0 +1,35 @@
+QUESTION: Valid Substring
+//https://practice.geeksforgeeks.org/problems/valid-substring0624/0
+
+Given a string S consisting only of opening and closing parenthesis 'ie '('  and ')', 
+find out the length of the longest valid(well-formed) parentheses substring.
+NOTE: Length of the smallest valid substring ( ) is 2.
+
+Test Case 1:
+
+Input: S = "(()("
+Output: 2
+Explanation: The longest valid 
+substring is "()". Length = 2.
+
+Test Case 2:
+
+Input: S = "()(())("
+Output: 6
+Explanation: The longest valid 
+substring is "()(())". Length = 6.
+
+Test Case 3:
+
+Input: S= ""
+Output: 0
+Explanation: No String
+
+
+Expected Time Complexity:O(n)
+Expected Auxiliary Space: O(1)   
+
+
+Constraints:
+1 <= |S| <= 105
+
