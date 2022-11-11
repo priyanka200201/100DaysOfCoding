@@ -1,0 +1,22 @@
+QUESTION: Maximum Product Difference Between Two Pairs
+//https://leetcode.com/problems/maximum-product-difference-between-two-pairs/description/
+
+class Solution {
+    public int maxProductDifference(int[] nums) {
+        int large1 = 0, large2 = 0, small1 = Integer.MAX_VALUE, 
+        small2 = Integer.MAX_VALUE;
+	for(int i=0;i<nums.length;i++) {
+		if(nums[i]>=large1) {                               //checking for largest number
+			large2 = large1;
+			large1 = nums[i];
+		} 
+        else if(nums[i]>large2) large2 = nums[i];
+		if(nums[i]<=small1) {                               ////checking for smallest number
+			small2 = small1;
+			small1 = nums[i];
+		} else if(nums[i]<small2) small2 = nums[i];
+	}
+	return large1 * large2 - small1 * small2;
+
+    }
+}
