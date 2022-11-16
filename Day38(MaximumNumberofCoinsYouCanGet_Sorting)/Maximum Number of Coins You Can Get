@@ -1,0 +1,19 @@
+QUESTION: Maximum Number of Coins You Can Get
+//https://leetcode.com/problems/maximum-number-of-coins-you-can-get/description/
+
+class Solution {
+    public int maxCoins(int[] piles) {
+            Arrays.sort(piles);
+      int k=0;
+        int sum=0;
+        int i= piles.length-2;
+        while(k!= ((piles.length)/3) )
+        {
+            sum=sum+piles[i];
+            i=i-2;
+            k++;
+        }
+     return sum;
+    }
+}
+    
