@@ -1,0 +1,16 @@
+QUESTION:  Sort Array By Parity
+//https://leetcode.com/problems/sort-array-by-parity/description/
+
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+        int n=nums.length;
+        for (int i = 0, j = 0; j < n; j++)
+            if (nums[j] % 2 == 0) {
+                int tmp = nums[i];
+                nums[i++] = nums[j];
+                nums[j] = tmp;;
+            }
+        return nums;
+
+            }
+}
