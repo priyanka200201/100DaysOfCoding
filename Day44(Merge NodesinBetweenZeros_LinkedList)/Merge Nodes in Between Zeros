@@ -1,0 +1,25 @@
+QUESTION:  Merge Nodes in Between Zeros
+//https://leetcode.com/problems/merge-nodes-in-between-zeros/description/
+
+class Solution {
+    public ListNode mergeNodes(ListNode head) {
+        ListNode newList = head;
+        ListNode curr_head = head.next;
+        int sum = 0;
+        while(curr_head != null)  
+        {
+            sum = 0;
+            while(curr_head.val != 0)   //checking for the node containing 0
+            {
+                sum = sum + curr_head.val;
+                curr_head = curr_head.next;    //adding the nodes in between
+            }
+            newList.next = curr_head;
+            curr_head.val = sum;
+            newList = newList.next;
+            curr_head = curr_head.next;
+        }
+        
+        return head.next;
+    }
+}
