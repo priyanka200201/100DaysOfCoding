@@ -1,0 +1,20 @@
+QUESTION: Maximum Twin Sum of a Linked List
+//https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/
+
+class Solution {
+    public int pairSum(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while(head != null)
+        {
+            list.add(head.val);
+            head = head.next;
+        }
+        int l = 0, r = list.size() - 1;
+        int max = Integer.MIN_VALUE;
+        while(l < r)
+        {
+            max = Math.max(max,list.get(l++)+list.get(r--));
+        }
+        return max;
+    }
+}
