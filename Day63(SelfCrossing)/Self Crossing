@@ -1,0 +1,17 @@
+QUESTION: Self Crossing
+//https://leetcode.com/problems/self-crossing/description/
+
+class Solution {
+    public boolean isSelfCrossing(int[] distance) {
+        if(distance.length < 4)   
+         return false;
+        int i = 0, base = 0;
+        while(i+4 <= distance.length){
+            if(distance[i] - distance[i+2] >= 0 && distance[i+1] - distance[i+3] <= base)  return true;
+            else if(distance[i+1] - distance[i+3] > base)     base = 0;
+            else    base = distance[i];
+            i++;
+        }
+        return false;
+    }
+}
