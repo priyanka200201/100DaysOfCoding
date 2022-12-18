@@ -1,0 +1,20 @@
+QUESTION: Daily Temperatures
+//https://leetcode.com/problems/daily-temperatures/description/
+
+class Solution {
+    public int[] dailyTemperatures(int[] temperatures) {
+        int[] result = new int[temperatures.length];
+        for (int i = temperatures.length - 2; i >= 0; i--) {
+            int next = i + 1;
+            while (next < temperatures.length && temperatures[next] <= temperatures[i]) {
+                if (result[next] == 0) {
+                    next = temperatures.length;
+                    break;
+                }
+                next += result[next];
+            }
+            if (next < temperatures.length) result[i] = next - i;
+        }
+        return result;
+    }
+}
