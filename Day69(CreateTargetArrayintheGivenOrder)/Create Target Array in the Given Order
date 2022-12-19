@@ -1,0 +1,15 @@
+QUESTION: Create Target Array in the Given Order
+//https://leetcode.com/problems/create-target-array-in-the-given-order/description/
+
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        int[] res = new int[index.length];
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0; i < index.length; i++){
+            list.add(index[i], nums[i]);
+        }
+        for(int i = 0; i < list.size(); i++)
+            res[i] = list.get(i);
+        return res;
+    }
+}
