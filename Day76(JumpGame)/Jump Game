@@ -1,0 +1,27 @@
+QUESTION:  Jump Game
+//https://leetcode.com/problems/jump-game/description/
+
+class Solution {
+    public boolean canJump(int[] nums) {
+        boolean[] jump = new boolean[nums.length];
+        Arrays.fill(jump, false);
+        jump[nums.length-1] = true;
+        for(int i = nums.length - 2; i >= 0; i--){
+            if(nums[i] == 0)
+                jump[i] = false;
+            else{
+                if(nums[i] + i >= nums.length)
+                    jump[i] = true;
+                else{
+                   for(int j = 1; j <= nums[i]; j++){
+                       jump[i] = jump[i] || jump[i + j];
+                       
+                       j += nums[i + j];
+                   } 
+                }
+            }
+        }
+        
+        return jump[0];
+    }
+}
