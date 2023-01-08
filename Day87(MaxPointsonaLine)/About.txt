@@ -5,7 +5,7 @@ Given an array of points where points[i] = [xi, yi] represents a point on the X-
 return the maximum number of points that lie on the same straight line.
  
  
-Test 1:
+Test Case 1:
 
 Input: points = [[1,1],[2,2],[3,3]]
 Output: 3
