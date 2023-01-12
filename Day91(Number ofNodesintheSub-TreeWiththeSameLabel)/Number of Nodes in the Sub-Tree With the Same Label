@@ -1,0 +1,37 @@
+QUESTION:  Number of Nodes in the Sub-Tree With the Same Label
+//https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/description/
+
+class Solution {
+  LinkedList<Integer>[] g;
+  int[] visit;
+  int[] ans;
+
+  public int[] countSubTrees(int n, int[][] edges, String labels) {
+    visit = new int[n];
+    ans = new int[n];
+
+    g = new LinkedList[n];
+    for(int i = 0; i != n; i++) g[i] = new LinkedList<>();
+    for(int[] e : edges){
+      g[e[0]].addLast(e[1]);
+      g[e[1]].addLast(e[0]);
+    }
+
+    dfs(0, labels);
+    return ans;
+  }
+
+  private int[] dfs(int node, String labels){
+    int letters[] = new int[26];
+    visit[node] = 1;
+
+    for(int next : g[node])
+      if(visit[next] == 0){
+        int temp[] = dfs(next, labels);
+        for(int i = 0; i != 26; i++) letters[i] += temp[i];
+      }
+
+    ans[node] = ++letters[labels.charAt(node)-'a'];
+    return letters;
+  }
+}
