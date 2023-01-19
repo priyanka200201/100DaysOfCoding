@@ -1,0 +1,19 @@
+QUESTION:   Maximum Length of Pair Chain
+//https://leetcode.com/problems/maximum-length-of-pair-chain/description/
+
+class Solution {
+    public int findLongestChain(int[][] pairs) {
+        Arrays.sort(pairs, (a, b) -> a[1] - b[1]);
+        int[] lastPair = pairs[0];
+        int len = 1;               
+        for (int i = 1; i < pairs.length; i++) {
+           
+            if (pairs[i][0] > lastPair[1]) {
+                len++;                  
+                lastPair = pairs[i];    
+            }
+        }
+
+        return len;     
+    }
+}
